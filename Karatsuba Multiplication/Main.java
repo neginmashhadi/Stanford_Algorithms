@@ -34,12 +34,12 @@ class KaratsubaMultiplication
 
         // Compute all mutilpying variables
         // needed to get the multiplication
-        long z0 = karatsuba(a, c);
-        long z1 = karatsuba(a + b, c + d);
-        long z2 = karatsuba(b, d);
+        long step0 = karatsuba(a, c);
+        long step1 = karatsuba(a + b, c + d);
+        long step2 = karatsuba(b, d);
 
-        long ans = (z0 * (long)Math.pow(10, middle * 2) +
-                ((z1 - z0 - z2) * (long)Math.pow(10, middle) + z2));
+        long ans = (step0 * (long)Math.pow(10, middle * 2) +
+                ((step1 - step0 - step2) * (long)Math.pow(10, middle) + step2));
 
         return ans;
     }
